@@ -1,0 +1,122 @@
+{
+  "name": "<%= name -%>",
+  "version": "0.0.1",
+  "description": "<%= description -%>",
+<% if (private) { -%>
+  "private": true,
+<% } else { -%>
+  "keywords": [
+    "loopback-<%= projectType -%>",
+    "loopback"
+  ],
+<% } -%>
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": "14 || 16 || 17 || 18"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+<% if (features.includes('prettier') && features.includes('eslint')) { -%>
+    "lint": "npm run eslint && npm run prettier:check",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+<% } else if (features.includes('prettier')) { -%>
+    "lint": "npm run prettier:check",
+    "lint:fix": "npm run prettier:fix",
+<% } else if (features.includes('eslint')) { -%>
+    "lint": "npm run eslint",
+    "lint:fix": "npm run eslint:fix",
+<% } -%>
+<% if (features.includes('prettier')) { -%>
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+<% } -%>
+<% if (features.includes('eslint')) { -%>
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+<% } -%>
+    "pretest": "npm run rebuild",
+<% if (features.includes('mocha')) { -%>
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+<% } -%>
+<% if (features.includes('prettier') || features.includes('eslint')) { -%>
+    "posttest": "npm run lint",
+<% } -%>
+<% if (features.includes('mocha') && (features.includes('prettier') || features.includes('eslint'))) { -%>
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
+<% } else if (features.includes('mocha')) { -%>
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js",
+<% } -%>
+<% if (projectType === 'application') { -%>
+<% if (features.includes('docker')) { -%>
+    "docker:build": "docker build -t <%= name -%> .",
+    "docker:run": "docker run -p 3000:3000 -d <%= name -%>",
+<% } -%>
+<% if (features.includes('repositories')) { -%>
+    "premigrate": "npm run build",
+    "migrate": "node ./dist/migrate",
+<% } -%>
+    "preopenapi-spec": "npm run build",
+    "openapi-spec": "node ./dist/openapi-spec",
+    "prestart": "npm run rebuild",
+    "start": "node -r source-map-support/register .",
+<% } -%>
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+<% if (author) { -%>
+  "author": "<%= author.name %> <<%= author.email %>>",
+<% } -%>
+  "license": "",
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+<% if (projectType === 'extension') { -%>
+  "peerDependencies": {
+    "@loopback/core": "<%= dependencies['@loopback/core'] -%>"
+  },
+<% } -%>
+  "dependencies": {
+<% if (projectType === 'application') { -%>
+    "@loopback/boot": "<%= dependencies['@loopback/boot'] -%>",
+    "@loopback/core": "<%= dependencies['@loopback/core'] -%>",
+<% if (features.includes('repositories')) { -%>
+    "@loopback/repository": "<%= dependencies['@loopback/repository'] -%>",
+<% } -%>
+<% if (features.includes('apiconnect')) { -%>
+    "@loopback/apiconnect": "<%= dependencies['@loopback/apiconnect'] -%>",
+<% } -%>
+    "@loopback/rest": "<%= dependencies['@loopback/rest'] -%>",
+<% if (features.includes('services')) { -%>
+    "@loopback/rest-explorer": "<%= dependencies['@loopback/rest-explorer'] -%>",
+    "@loopback/service-proxy": "<%= dependencies['@loopback/service-proxy'] -%>",
+<% } else { -%>
+    "@loopback/rest-explorer": "<%= dependencies['@loopback/rest-explorer'] -%>",
+<% } -%>
+<% } -%>
+    "tslib": "<%= dependencies['tslib'] -%>"
+  },
+  "devDependencies": {
+    "@loopback/build": "<%= dependencies['@loopback/build'] -%>",
+    "source-map-support": "<%= dependencies['source-map-support'] -%>",
+<% if (projectType === 'extension') { -%>
+    "@loopback/core": "<%= dependencies['@loopback/core'] -%>",
+<% } -%>
+    "@loopback/testlab": "<%= dependencies['@loopback/testlab'] -%>",
+    "@types/node": "<%= dependencies['@types/node'] -%>",
+<% if (features.includes('eslint')) { -%>
+    "@loopback/eslint-config": "<%= dependencies['@loopback/eslint-config'] -%>",
+    "eslint": "<%= dependencies['eslint'] -%>",
+<% } -%>
+    "typescript": "<%= dependencies['typescript'] -%>"
+  }
+}
