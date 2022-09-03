@@ -1,13 +1,14 @@
 {
   "name": "create-loopback",
   "description": "LoopBack initializer package",
-  "version": "0.0.0",
+  "version": "1.0.0-0",
   "license": "MIT",
   "bin": "bin/main.js",
-  "author": "Francisco Buceta <frbuceta@gmail.com>",
-  "repository": "github:frbuceta/create-loopback",
-  "homepage": "https://github.com/frbuceta/create-loopback#readme",
-  "bugs": "https://github.com/frbuceta/create-loopback/issues",
+  "author": "IBM Corp. and LoopBack contributors",
+  "repository": "github:loopbackio/create-loopback",
+  "copyright.owner": "IBM Corp. and LoopBack contributors",
+  "homepage": "https://github.com/loopbackio/create-loopback#readme",
+  "bugs": "https://github.com/loopbackio/create-loopback/issues",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

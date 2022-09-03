@@ -1,1 +1,3 @@
-# create-loopback
+# LoopBack initializer
+
+> npm create loopback
