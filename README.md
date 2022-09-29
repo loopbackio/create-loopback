@@ -1,3 +1,5 @@
 # LoopBack initializer
 
-> npm create loopback
+```bash
+npm create loopback
+```
