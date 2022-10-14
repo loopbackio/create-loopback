@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Suggest a feature
+    url: https://github.com/loopbackio/loopback-next/discussions/new?category=Ideas
+    about: Share ideas for new features and discuss how to implement them
+  - name: Get help on StackOverflow
+    url: https://stackoverflow.com/tags/loopbackjs
+    about: You can also ask and answer questions on StackOverflow.
