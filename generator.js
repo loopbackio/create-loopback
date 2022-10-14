@@ -164,7 +164,24 @@ module.exports = class extends Generator {
             email: this.user.git.email(),
           }
           : null,
-        dependencies: {},
+        dependencies: {
+          // Dependencies
+          '@loopback/boot': '^5.0.4',
+          '@loopback/core': '^4.0.4',
+          '@loopback/repository': '^5.0.4',
+          '@loopback/rest': '^12.0.4',
+          '@loopback/rest-explorer': '^5.0.4',
+          '@loopback/service-proxy': '^5.0.4',
+          'tslib': '^2.4.0',
+          // DevDependencies
+          '@loopback/build': '^9.0.4',
+          'source-map-support': '^0.5.21',
+          '@loopback/testlab': '^5.0.4',
+          '@types/node': '^14.18.32',
+          '@loopback/eslint-config': '^13.0.4',
+          'eslint': '^8.25.0',
+          'typescript': '~4.8.4',
+        },
         features: this.answers.features,
       },
       undefined,
