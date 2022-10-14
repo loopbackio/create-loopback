@@ -10,6 +10,7 @@
   "homepage": "https://github.com/loopbackio/create-loopback#readme",
   "bugs": "https://github.com/loopbackio/create-loopback/issues",
   "scripts": {
+    "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -19,6 +20,9 @@
     "yeoman-generator": "^5.7.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "husky": "^8.0.1",
     "yeoman-test": "^6.3.0"
   }
 }
