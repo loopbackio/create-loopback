@@ -194,7 +194,19 @@ module.exports = class extends Generator {
       {
         name: this.answers.name,
         applicationClass: this.answers.applicationClass,
-        appClassWithMixins: null, // ToDo: customize appClassWithMixins
+        get appClassWithMixins() {
+          if (!this.features.includes('repositories') && !this.features.includes('services')) {
+            return null
+          }
+          let appClassWithMixins = 'RestApplication';
+          if (this.features.includes('repositories')) {
+            appClassWithMixins = `RepositoryMixin(${appClassWithMixins})`;
+          }
+          if (this.features.includes('services')) {
+            appClassWithMixins = `ServiceMixin(${appClassWithMixins})`;
+          }
+          return appClassWithMixins
+        },
         features: this.answers.features
       },
       undefined,
