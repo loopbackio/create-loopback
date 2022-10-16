@@ -10,14 +10,23 @@
     "loopback"
   ],
 <% } -%>
+<% if (author) { -%>
+  "author": "<%= author.name %> <<%= author.email %>>",
+<% } -%>
+  "license": "UNLICESED",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": "14 || 16 || 17 || 18"
+    "node": "14 || 16 || 18"
   },
   "scripts": {
+<% if (features.includes('build')) { -%>
     "build": "lb-tsc",
     "build:watch": "lb-tsc --watch",
+<% } else { -%>
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+<% } -%>
 <% if (features.includes('prettier') && features.includes('eslint')) { -%>
     "lint": "npm run eslint && npm run prettier:check",
     "lint:fix": "npm run eslint:fix && npm run prettier:fix",
@@ -66,14 +75,6 @@
     "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
     "rebuild": "npm run clean && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-<% if (author) { -%>
-  "author": "<%= author.name %> <<%= author.email %>>",
-<% } -%>
-  "license": "",
   "files": [
     "README.md",
     "dist",

@@ -14,25 +14,27 @@
 
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "useUnknownInCatchVariables": false,
 
     "incremental": true,
 
-    "lib": ["es2018", "esnext.asynciterable"],
+    "lib": ["es2020"],
     "module": "commonjs",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "target": "es2017",
+    "target": "es2018",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "importHelpers": true
   },
   "include": ["src"],
   "exclude": [
-    "**/node_modules/**",
-    "**/dist/**",
+    "node_modules/**",
+    "dist/**",
     "**/*.d.ts"
   ]
 <% } -%>
