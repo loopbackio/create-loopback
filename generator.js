@@ -28,6 +28,25 @@ const COPY_OPTS = {
   },
 }
 
+const dependencies = {
+  // Dependencies
+  '@loopback/boot': '^5.0.9',
+  '@loopback/core': '^4.0.9',
+  '@loopback/repository': '^5.1.4',
+  '@loopback/rest': '^12.0.9',
+  '@loopback/rest-explorer': '^5.0.9',
+  '@loopback/service-proxy': '^5.0.9',
+  'tslib': '^2.5.0',
+  // DevDependencies
+  '@loopback/build': '^9.0.9',
+  'source-map-support': '^0.5.21',
+  '@loopback/testlab': '^5.0.9',
+  '@types/node': '^18.15.3',
+  '@loopback/eslint-config': '^13.0.9',
+  'eslint': '^8.36.0',
+  'typescript': '~4.9.4',
+}
+
 module.exports = class extends Generator {
   async prompting() {
     this.answers = await this.prompt(
@@ -164,24 +183,7 @@ module.exports = class extends Generator {
             email: this.user.git.email(),
           }
           : null,
-        dependencies: {
-          // Dependencies
-          '@loopback/boot': '^5.0.9',
-          '@loopback/core': '^4.0.9',
-          '@loopback/repository': '^5.1.4',
-          '@loopback/rest': '^12.0.9',
-          '@loopback/rest-explorer': '^5.0.9',
-          '@loopback/service-proxy': '^5.0.9',
-          'tslib': '^2.5.0',
-          // DevDependencies
-          '@loopback/build': '^9.0.9',
-          'source-map-support': '^0.5.21',
-          '@loopback/testlab': '^5.0.9',
-          '@types/node': '^18.15.3',
-          '@loopback/eslint-config': '^13.0.9',
-          'eslint': '^8.36.0',
-          'typescript': '~4.9.4',
-        },
+        dependencies,
         features: this.answers.features,
       },
       undefined,
