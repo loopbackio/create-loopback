@@ -4,6 +4,7 @@ const validatePkgName = require('validate-npm-package-name')
 const inquirer = require('inquirer')
 const stringUtils = require('lodash/string')
 const isEmpty = require('lodash/isEmpty')
+const dependencies = require('./versions.json')
 
 const SPECIAL_CHARACTERS = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/g;
 const COPY_OPTS = {
@@ -26,25 +27,6 @@ const COPY_OPTS = {
     // `D:\Users\BKU\oliverkarst\AppData(Roaming)\npm\node_modules\@loopback\cli`
     noext: true,
   },
-}
-
-const dependencies = {
-  // Dependencies
-  '@loopback/boot': '^5.0.9',
-  '@loopback/core': '^4.0.9',
-  '@loopback/repository': '^5.1.4',
-  '@loopback/rest': '^12.0.9',
-  '@loopback/rest-explorer': '^5.0.9',
-  '@loopback/service-proxy': '^5.0.9',
-  'tslib': '^2.5.0',
-  // DevDependencies
-  '@loopback/build': '^9.0.9',
-  'source-map-support': '^0.5.21',
-  '@loopback/testlab': '^5.0.9',
-  '@types/node': '^18.15.3',
-  '@loopback/eslint-config': '^13.0.9',
-  'eslint': '^8.36.0',
-  'typescript': '~4.9.4',
 }
 
 module.exports = class extends Generator {

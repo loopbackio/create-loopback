@@ -30,6 +30,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "husky": "^8.0.3",
+    "pacote": "^15.1.2",
     "yeoman-test": "^7.4.0"
   }
 }
