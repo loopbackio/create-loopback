@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
-    "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/config-conventional": "^18.0.0",
     "husky": "^8.0.3",
     "pacote": "^17.0.0",
     "yeoman-test": "^7.4.0"
