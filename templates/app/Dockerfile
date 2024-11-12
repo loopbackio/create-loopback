@@ -1,5 +1,5 @@
 # Check out https://hub.docker.com/_/node to select a new base image
-FROM node:18-slim
+FROM node:22-slim
 
 # Set to a non-root built-in user `node`
 USER node
@@ -25,4 +25,5 @@ RUN npm run build
 ENV HOST=0.0.0.0 PORT=3000
 
 EXPOSE ${PORT}
+
 CMD [ "node", "." ]
