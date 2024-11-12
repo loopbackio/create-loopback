@@ -10,7 +10,7 @@
   "homepage": "https://github.com/loopbackio/create-loopback#readme",
   "bugs": "https://github.com/loopbackio/create-loopback/issues",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.0.0",
     "@commitlint/config-conventional": "^19.0.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.0",
     "pacote": "^20.0.0",
     "yeoman-test": "^7.4.0"
   }
