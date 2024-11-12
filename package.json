@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "lodash": "^4.17.21",
-    "validate-npm-package-name": "^5.0.0",
+    "validate-npm-package-name": "^6.0.0",
     "yeoman-environment": "3.19.3",
     "yeoman-generator": "^5.8.0"
   },
