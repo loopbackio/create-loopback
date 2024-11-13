@@ -1,7 +1,7 @@
 {
   "name": "create-loopback",
   "description": "LoopBack initializer package",
-  "version": "1.0.0-4",
+  "version": "1.0.0-9",
   "license": "MIT",
   "bin": "bin/main.js",
   "author": "IBM Corp. and LoopBack contributors",
