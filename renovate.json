@@ -6,6 +6,7 @@
     ":ignoreModulesAndTests",
     ":prHourlyLimit2",
     ":prConcurrentLimit10",
-    "workarounds:typesNodeVersioning"
+    "workarounds:typesNodeVersioning",
+    "group:commitlintMonorepo"
   ]
 }
