@@ -1,5 +1,5 @@
 # LoopBack initializer
 
 ```bash
-npm create loopback
+npm init loopback
 ```
