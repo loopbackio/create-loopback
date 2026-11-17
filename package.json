@@ -27,8 +27,8 @@
     "yeoman-generator": "^5.8.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.0.0",
-    "@commitlint/config-conventional": "^19.0.0",
+    "@commitlint/cli": "^21.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
     "husky": "^9.0.0",
     "pacote": "^20.0.0",
     "yeoman-test": "^7.4.0"
